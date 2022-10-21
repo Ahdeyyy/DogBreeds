@@ -13,7 +13,7 @@
 			<h2 class="card-title text-2xl">🐕‍🦺</h2>
 			<p class="text-3xl font-extrabold " >{breed_name}</p>
 			<div class="card-actions justify-end">
-				<a class="btn btn-primary-focus" href={breed_link}>View</a>
+				<a sveltekit:prefetch class="btn btn-primary-focus" href={breed_link}>View</a>
 			</div>
 		</section>
 	</article>

@@ -10,7 +10,7 @@
 	<label tabindex="0" class="btn m-1 bg-primary text-primary-content hover:bg-primary-focus">Subbreeds</label>
 	<ul transition:fade tabindex="0" class="dropdown-content menu p-2 shadow-lg bg-primary rounded-box w-52 text-primary-content">
 		{#each subbreeds as subbreed}
-			<li  class="subbreed bg-primary"><a href="/breeds/{breed_name}/{subbreed}"> {subbreed}</a></li>
+			<li  class="subbreed bg-primary"><a sveltekit:prefetch href="/breeds/{breed_name}/{subbreed}"> {subbreed}</a></li>
 		{/each}
 	</ul>
 </div>

@@ -46,23 +46,21 @@
 	</div>
 </Navbar>
 
-{#if breeds.length > 0}
+
 	<ul
-        transition:fade
 		class=" mx-auto w-7/12 text-center px-5 my-2 rounded-box "
 	>
-		{#each breeds as breed}
+		{#each breeds as breed , i }
 			<li
-				in:fly={{ x: -250, duration: 1500 }}
-				out:fly={{ x: 200, duration: 1500 }}
+				in:fly={{ y: -250, duration: 1200 , delay: i * 200 }}
+				out:fade={{ duration: 1200  , delay: i * 200 }}
 				class="my-2 py-4 bg-primary text-primary-content rounded-md hover:bg-primary-focus "
 			>
-				<a href="/breeds/{breed}" class="text-center w-full">{breed}</a>
+				<a sveltekit:prefetch href="/breeds/{breed}" class="text-center p-10 w-full">{breed}</a>
 			</li>
 		{/each}
 	</ul>
-	<!-- content here -->
-{/if}
+
 
 <section>
 	<slot />

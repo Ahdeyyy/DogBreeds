@@ -1,6 +1,9 @@
 <script>
-    export let item_name = "";
-    export let item_link = "";
+	export let item_name = '';
+	export let item_link = '';
 </script>
 
-<a data-sveltekit-prefetch class=" m-6 p-3" href={item_link}>{item_name}</a>
+<a
+	class=" m-6 p-3 text-2xl hover:underline-offset-1 hover:underline hover:decoration-2"
+	href={item_link}>{item_name}</a
+>

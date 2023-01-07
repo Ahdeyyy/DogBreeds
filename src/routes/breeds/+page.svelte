@@ -1,31 +1,25 @@
 <script>
+	import BreedCard from '$lib/components/breedCard.svelte';
+	import { fade } from 'svelte/transition';
 
-    import BreedCard from '$lib/components/breedCard.svelte';
-
-    /** @type {import('./$types').PageData} */
-    export let data;
-
-    
-    
+	/** @type {import('./$types').PageData} */
+	export let data;
 </script>
 
 <svelte:head>
-    <title>
-        Breeds
-    </title>
+	<title>Breeds</title>
 </svelte:head>
 
-<main>
-    {#each data.breeds as [key,value] }
-        <BreedCard breed_name={key} breed_link="/breeds/{key}" subbreeds={value} />
-    {/each}
+<main in:fade={{ duration: 600, delay: 600 }} out:fade={{ duration: 600, delay: 0 }}>
+	{#each data.breeds as [key, value]}
+		<BreedCard breed_name={key} breed_link="/breeds/{key}" subbreeds={value} />
+	{/each}
 </main>
 
 <style>
-    main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+	main {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 </style>
-

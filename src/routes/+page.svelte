@@ -28,7 +28,11 @@
 
 <!-- TODO: page transitions -->
 
-<main class="grid place-content-center px-4">
+<main
+	class="grid place-content-center px-4"
+	in:fade={{ duration: 600, delay: 600 }}
+	out:fade={{ duration: 600, delay: 0 }}
+>
 	<div class="flex space-x-8 align-middle">
 		<div>
 			<h1 class="text-5xl sm:text-lg md:text-2xl font-bold text-base-content mb-6">
@@ -43,11 +47,11 @@
 			</p>
 
 			<div class="flex my-6 space-x-9">
-				<button
-					class="btn bg-primary py-2 px-4 rounded-lg shadow-sm hover:shadow shadow-primary hover:bg-primary-focus"
+				<a
+					class="text-primary-content
+btn bg-primary py-2 px-4 rounded-lg shadow-sm hover:shadow shadow-primary hover:bg-primary-focus"
+					href="/breeds">See all breeds</a
 				>
-					<a class="text-primary-content" href="/breeds">See all breeds</a>
-				</button>
 				<form action="?/search" method="post" on:input|preventDefault={handleInput}>
 					<input
 						name="search"
